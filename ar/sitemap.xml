@@ -3,21 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://zhangyi999.github.io/docs/ar/nxtools/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="cn"
-                href="https://zhangyi999.github.io/docs/cn/nxtools/"
-                />
+    <loc>https://zhangyi999.github.io/docs/ar/qxtools/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://zhangyi999.github.io/docs/en/nxtools/"
+                href="https://zhangyi999.github.io/docs/en/qxtools/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://zhangyi999.github.io/docs/cn/qxtools/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="https://zhangyi999.github.io/docs/ar/nxtools/"
+                href="https://zhangyi999.github.io/docs/ar/qxtools/"
                 />
   </url>
   

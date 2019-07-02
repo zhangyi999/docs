@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/docs/images/favicon.ico" type="image/png">
 
-    <title>Introduction :: Qitmeer Documentation</title>
+    <title>Qx Tools :: Qitmeer Documentation</title>
 
     
     <link href="/docs/css/nucleus.css?1562040101" rel="stylesheet">
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/docs/en/intro/">
+  <body class="" data-url="/docs/en/qxtools/">
     <nav id="sidebar" class="">
 
 
@@ -85,8 +85,8 @@
   
     
     <li data-nav-id="/docs/en/intro/" title="Introduction" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/docs/en/intro/">
@@ -187,8 +187,8 @@
   
     
     <li data-nav-id="/docs/en/qxtools/" title="Qx Tools" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/docs/en/qxtools/">
@@ -318,8 +318,36 @@
                   
                     
                     
-                      <option id="en" value="https://zhangyi999.github.io/docs/en/intro/" selected>English</option>
+                      <option id="en" value="https://zhangyi999.github.io/docs/en/qxtools/" selected>English</option>
                     
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="cn" value="https://zhangyi999.github.io/docs/cn/qxtools/">中文（简体）</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+                    
+                    
+                      <option id="ar" value="https://zhangyi999.github.io/docs/ar/qxtools/">العربية</option>
+                    
+                  
+              
+                  
+              
                   
               
           
@@ -376,7 +404,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/HalalChain/docs/edit/master/Document/content/intro/_index.en.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/HalalChain/docs/edit/master/Document/content/qxtools/_index.en.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -403,7 +431,7 @@
             
           
           
-            <a href='/docs/en/'>Qitmeer docs</a> > Introduction
+            <a href='/docs/en/'>Qitmeer docs</a> > Qx Tools
           
          
           
@@ -418,14 +446,26 @@
 <ul>
 <li>
 <ul>
-<li>
+<li><a href="#qx-user-guide">Qx user guide</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#how-to-build">How to build</a></li>
+<li><a href="#qx-commands">qx Commands</a></li>
+<li><a href="#encoding-commands">Encoding Commands</a>
 <ul>
 <li>
 <ul>
-<li><a href="#bitcoin-and-blockchain">Bitcoin and Blockchain</a></li>
-<li><a href="#qitmeer-blockdag">Qitmeer BlockDAG</a></li>
-<li><a href="#qitmeer-pow">Qitmeer POW</a></li>
-<li><a href="#qitmeer-token-isamlic-financial-ecosystem">Qitmeer token &amp; Isamlic financial ecosystem</a></li>
+<li><a href="#base58-encode">base58-encode</a>
+<ul>
+<li><a href="#example">Example</a></li>
+</ul></li>
+<li><a href="#base58-decode">base58-decode</a>
+<ul>
+<li><a href="#example-1">Example</a></li>
+</ul></li>
+<li><a href="#base58check-encode">base58check-encode</a>
+<ul>
+<li><a href="#example-2">Example</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -446,7 +486,7 @@
           
             <h1>
               
-              Introduction
+              Qx Tools
             </h1>
           
 
@@ -455,28 +495,156 @@
 
 	
 
-<h4 id="bitcoin-and-blockchain">Bitcoin and Blockchain</h4>
+<h2 id="qx-user-guide">Qx user guide</h2>
 
-<p>Bitcoin was born with revolution, and it opened a new world that currency issuance becomes open and fair by a cryptography-based decentralized payment network. With the arrival of 10-years birth of bitcoin, the blockchain infrastructure is facing various challenges from technical aspects. The underlying mechanism of Bitcoin, the blockchain, was found capable of playing a significant role in the financial field.</p>
+<p><a href="https://github.com/HalalChain/qx">Qx</a> is a command-line tool that provides a variety of commands for key management and transaction construction, such as random &ldquo;seed&rdquo; generation, public/private key encoding etc. qx cab be built and distributed as a single file binary, which works like the swiss army knife of qitmeer.</p>
 
-<p>a blockchain is an immutable transaction database, which maintained by peer nodes which communicated with each other within a Peer-to-Peer distributed network. For each peer, which validate and apply transactions according to a consensus protocol.
-The transcations grouped into blocks that linked by a hash from one block to the preceding block, aka <em>the chain of block</em> which is the name of blockchain is comming from.</p>
+<p>Please see more details at <a href="https://github.com/HalalChain/qx">https://github.com/HalalChain/qx</a></p>
 
-<h4 id="qitmeer-blockdag">Qitmeer BlockDAG</h4>
+<h2 id="prerequisites">Prerequisites</h2>
 
-<p>Qitmeer regards openness,fairness, fault tolerance, scalability as the core metrics to assess a promising blockchain paradigm, and a blockchain system achieved a desirable balance among these metrics is regarded as Classical Blockchain Setting.</p>
+<p>Update Go to version at least 1.12 (required &gt;= <strong>1.12</strong>)</p>
 
-<p>Qitmeer use SPECTRE as its fundamental Consensus protocol. SPECTRE is a fast-confirmation and high-throughput BlockDAG protocol(Directed Acyclic Graph of blocks, a blockDAG), which guarantees high performance in a payment network. Additionally, Qitmeer introduces another high-throughput BlockDAG protocol GhostDAG, which is highlighted on unprecedentedly supporting transactions linearly ordering, to circumvent SPECTRE&rsquo;s weak liveness and provide ordering service for the fair scheme of the reward system.</p>
+<p>Check your golang version</p>
 
-<h4 id="qitmeer-pow">Qitmeer POW</h4>
+<pre><code class="language-bash">~ go version
+go version go1.12 darwin/amd64
+</code></pre>
 
-<p>Qitmeer Consensus is compliant with Classical Blockchain Setting - it could enter and leave network freely by Proof-of-Work, and the collaboration model of DAG ledger guarantees that miners gain rewards consistent with their devotion, 50\% faulty tolerance as secure as bitcoin, robust scalability that is only subject to physical network limit. The mining algorithm is also a vital source of fairness other than consensus algorithm per se. Cuckoo Ring is a graph theory based proof-of-work mining algorithm and is practically ASIC resistant due to memory-hard calculation.</p>
+<h2 id="how-to-build">How to build</h2>
 
-<h4 id="qitmeer-token-isamlic-financial-ecosystem">Qitmeer token &amp; Isamlic financial ecosystem</h4>
+<pre><code class="language-bash">~ mkdir -p /tmp/work
+~ cd /tmp/work
+~ git clone https://github.com/HalalChain/qx.git
+~ cd qx
+~ go build
+~ ./qx --version
+Qx Version : &quot;0.0.1&quot;
+</code></pre>
 
-<p>Qitmeer originates a UTXO-based unique token insurance scheme, which has effectively answered two main concerns: Intrinsic Value and Assets Authentication. Issuing a certain amount of assets must consume a certain amount of the native currency; moreover, entities must be warranted a license to issue assets.</p>
+<h2 id="qx-commands">qx Commands</h2>
 
-<p>Qitmeer devises a family of specifications and protocols to embrace the whole Isamlic financial ecosystem, such as wallet and miners. As for interoperability, Qitmeer calls for utilizing cross-chain protocols to integrate various cryptocurrencies and offer reliable off-chain smart contract services.</p>
+<pre><code class="language-shell">~ qx
+
+Usage: qx [--version] [--help] &lt;command&gt; [&lt;args&gt;]
+
+encode and decode :
+    base58-encode         encode a base16 string to a base58 string
+    base58-decode         decode a base58 string to a base16 string
+    base58check-encode    encode a base58check string
+    base58check-decode    decode a base58check string
+    base64-encode         encode a base16 string to a base64 string
+    base64-encode         encode a base64 string to a base16 string
+    rlp-encode            encode a string to a rlp encoded base16 string
+    rlp-decode            decode a rlp base16 string to a human-readble representation
+
+hash :
+    blake2b256            calculate Blake2b 256 hash of a base16 data.
+    blake2b512            calculate Blake2b 512 hash of a base16 data.
+    sha256                calculate SHA256 hash of a base16 data.
+    sha3-256              calculate SHA3 256 hash of a base16 data.
+    keccak-256            calculate legacy keccak 256 hash of a bash16 data.
+    blake256              calculate blake256 hash of a base16 data.
+    ripemd160             calculate ripemd160 hash of a base16 data.
+    bitcion160            calculate ripemd160(sha256(data))
+    hash160               calculate ripemd160(blake2b256(data))
+
+entropy (seed) &amp; mnemoic &amp; hd &amp; ec
+    entropy               generate a cryptographically secure pseudorandom entropy (seed)
+    hd-new                create a new HD(BIP32) private key from an entropy (seed)
+    hd-to-ec              convert the HD (BIP32) format private/public key to a EC private/public key
+    hd-to-public          derive the HD (BIP32) public key from a HD private key
+    hd-decode             decode a HD (BIP32) private/public key serialization format
+    hd-derive             Derive a child HD (BIP32) key from another HD public or private key.
+    mnemonic-new          create a mnemonic world-list (BIP39) from an entropy
+    mnemonic-to-entropy   return back to the entropy (the random seed) from a mnemonic world list (BIP39)
+    mnemonic-to-seed      convert a mnemonic world-list (BIP39) to its 512 bits seed 
+    ec-new                create a new EC private key from an entropy (seed).
+    ec-to-public          derive the EC public key from an EC private key (the compressed format by default )
+    ec-to-wif             convert an EC private key to a WIF, associates with the compressed public key by default.
+    wif-to-ec             convert a WIF private key to an EC private key.
+    wif-to-public         derive the EC public key from a WIF private key.
+
+addr &amp; tx &amp; sign
+    ec-to-addr            convert an EC public key to a paymant address. default is nox address
+    tx-encode             encode a unsigned transaction.
+    tx-decode             decode a transaction in base16 to json format.
+    tx-sign               sign a transactions using a private key.
+    msg-sign              create a message signature
+    msg-verify            validate a message signature
+    signature-decode      decode a ECDSA signature
+
+</code></pre>
+
+<h2 id="encoding-commands">Encoding Commands</h2>
+
+<p>Encode/Decocde Qitmeer address &amp; private/pubkey</p>
+
+<h4 id="base58-encode">base58-encode</h4>
+
+<ul>
+<li>encode a base16 string to a base58 string</li>
+</ul>
+
+<h5 id="example">Example</h5>
+
+<pre><code class="language-bash">~ qx base58-decode RmCYoUMqKZopUkai2YhUFHR9UeqjeyjTAgW
+</code></pre>
+
+<pre><code class="language-bash"># base16 string
+0df144d959afb6db4ad730a6e2c0daf46ceeb98c53a059cd6527
+</code></pre>
+
+<hr />
+
+<h4 id="base58-decode">base58-decode</h4>
+
+<ul>
+<li>decode a base58 string to a base16 string</li>
+</ul>
+
+<h5 id="example-1">Example</h5>
+
+<pre><code class="language-bash">~ qx base58-decode 1234567890abcdef
+</code></pre>
+
+<pre><code class="language-bash"># base58 string
+43c9JGZmRvE
+</code></pre>
+
+<hr />
+
+<h4 id="base58check-encode">base58check-encode</h4>
+
+<ul>
+<li>base16 string into Qitmeer or BTC address.</li>
+</ul>
+
+<pre><code class="language-bash">~ qx base58check-encode
+Usage: qx base58check-encode [-v &lt;ver&gt;] [hexstring]
+  -a string
+    base58check hasher
+  -c int
+    base58check checksum size (default 4)
+  -v version
+    base58check version [mainnet|testnet|privnet|btcmainnet|btctestnet|btcregressionnet] (default privnet)
+</code></pre>
+
+<h5 id="example-2">Example</h5>
+
+<pre><code class="language-bash"># create qitmeer privnet address by base16
+~ qx base58check-encode c1c3092d17c917c2799c041aeaeac18822772149
+
+# base58 string
+RmPwHCuC2m6gvz9TnVLapHySk1ZU72FTSru
+</code></pre>
+
+<pre><code class="language-bash"># create btc testnet address by base16
+~ qx base58check-encode -v btctestnet c1c3092d17c917c2799c041aeaeac18822772149
+
+# base58 string
+myBUMQTmZGK8yKLDranjSQEHbCYCaaywQD
+</code></pre>
 
 
 
@@ -534,75 +702,8 @@ The transcations grouped into blocks that linked by a hash from one block to the
 
     
         
-        
-    
-    
-
-        
-        
-        
-
-        
-
-
-        
-            
-
-
-    
-        
             
             
-        
-    
-    
-
-        
-        
-        
-
-        
-
-
-        
-            
-
-
-    
-        
-    
-    
-
-        
-        
-            
-        
-        
-
-        
-            
-
-
-    
-        
-    
-    
-
-        
-        
-        
-
-        
-
-
-        
-
-
-        
-            
-
-
-    
         
     
     
@@ -635,6 +736,60 @@ The transcations grouped into blocks that linked by a hash from one block to the
 
 
     
+        
+    
+    
+
+        
+        
+            
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+            
+            
         
     
     
@@ -679,6 +834,22 @@ The transcations grouped into blocks that linked by a hash from one block to the
 
 
         
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
 
 
 
@@ -688,10 +859,10 @@ The transcations grouped into blocks that linked by a hash from one block to the
 
 
 
-<a class="nav nav-prev" href="/docs/en/" title="Qitmeer docs"> <i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-prev" href="/docs/en/tutorials/qitmeer-docker-test/" title="Qitmeer Testing Guide"> <i class="fa fa-chevron-left"></i></a>
 
 
-<a class="nav nav-next" href="/docs/en/getstart/" title="Getting Started" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+<a class="nav nav-next" href="/docs/en/qitmeer-cli/" title="Qitmeer-cli" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 
 
 </div>
@@ -707,9 +878,9 @@ The transcations grouped into blocks that linked by a hash from one block to the
             <i class="fab fa-fw fa-github"></i>
             <strong>Contribute on GitHub</strong>
             <p>
-              <a target="blank" href="https://github.com/HalalChain/docs/issues/new?title=Introduction&body=Link%3A%C2%A0intro%2f_index.en.md%0A%0A%23%23%20Issue%0A%0A%23%23%20Suggested%20Fix%0A&labels=inaccurate%20guide">Report an Issue</a > |
-              <a target="blank" href="https://github.com/HalalChain/docs/tree/master/Document/content/intro/_index.en.md">View File</a > |
-              <a target="blank" href="https://github.com/HalalChain/docs/edit/master/Document/content/intro/_index.en.md">Edit File</a >
+              <a target="blank" href="https://github.com/HalalChain/docs/issues/new?title=Qx%20Tools&body=Link%3A%C2%A0qxtools%2f_index.en.md%0A%0A%23%23%20Issue%0A%0A%23%23%20Suggested%20Fix%0A&labels=inaccurate%20guide">Report an Issue</a > |
+              <a target="blank" href="https://github.com/HalalChain/docs/tree/master/Document/content/qxtools/_index.en.md">View File</a > |
+              <a target="blank" href="https://github.com/HalalChain/docs/edit/master/Document/content/qxtools/_index.en.md">Edit File</a >
             </p >
           </div>    
         
