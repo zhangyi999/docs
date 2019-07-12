@@ -15,7 +15,27 @@
   </url>
   
   <url>
+    <loc>https://zhangyi999.github.io/docs/en/qxtools/txsign/address/</loc>
+  </url>
+  
+  <url>
+    <loc>https://zhangyi999.github.io/docs/en/qxtools/encode_decode/qxbase58/</loc>
+  </url>
+  
+  <url>
+    <loc>https://zhangyi999.github.io/docs/en/qxtools/entropy/seed/</loc>
+  </url>
+  
+  <url>
+    <loc>https://zhangyi999.github.io/docs/en/qxtools/hash/sha256/</loc>
+  </url>
+  
+  <url>
     <loc>https://zhangyi999.github.io/docs/en/getstart/</loc>
+  </url>
+  
+  <url>
+    <loc>https://zhangyi999.github.io/docs/en/qxtools/entropy/hd/</loc>
   </url>
   
   <url>
@@ -27,6 +47,18 @@
   </url>
   
   <url>
+    <loc>https://zhangyi999.github.io/docs/en/qxtools/encode_decode/qxbase58check/</loc>
+  </url>
+  
+  <url>
+    <loc>https://zhangyi999.github.io/docs/en/qxtools/hash/blakehash/</loc>
+  </url>
+  
+  <url>
+    <loc>https://zhangyi999.github.io/docs/en/qxtools/txsign/transaction/</loc>
+  </url>
+  
+  <url>
     <loc>https://zhangyi999.github.io/docs/en/qxtools/entropy/</loc>
   </url>
   
@@ -35,7 +67,27 @@
   </url>
   
   <url>
+    <loc>https://zhangyi999.github.io/docs/en/qxtools/encode_decode/qxbase64/</loc>
+  </url>
+  
+  <url>
+    <loc>https://zhangyi999.github.io/docs/en/qxtools/hash/keccak256/</loc>
+  </url>
+  
+  <url>
+    <loc>https://zhangyi999.github.io/docs/en/qxtools/entropy/mnemonic/</loc>
+  </url>
+  
+  <url>
+    <loc>https://zhangyi999.github.io/docs/en/qxtools/txsign/sign_verify/</loc>
+  </url>
+  
+  <url>
     <loc>https://zhangyi999.github.io/docs/en/qxtools/txsign/</loc>
+  </url>
+  
+  <url>
+    <loc>https://zhangyi999.github.io/docs/en/qxtools/entropy/ec/</loc>
   </url>
   
   <url>
@@ -58,7 +110,23 @@
   </url>
   
   <url>
+    <loc>https://zhangyi999.github.io/docs/en/qxtools/hash/ripemd160/</loc>
+  </url>
+  
+  <url>
     <loc>https://zhangyi999.github.io/docs/en/qitmeer-cli/</loc>
+  </url>
+  
+  <url>
+    <loc>https://zhangyi999.github.io/docs/en/qxtools/entropy/wif/</loc>
+  </url>
+  
+  <url>
+    <loc>https://zhangyi999.github.io/docs/en/qxtools/hash/bitcion160/</loc>
+  </url>
+  
+  <url>
+    <loc>https://zhangyi999.github.io/docs/en/qxtools/hash/hash160/</loc>
   </url>
   
   <url>
